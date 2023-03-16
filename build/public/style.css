@@ -1,0 +1,260 @@
+/* Our default values set as CSS variables */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+:root {
+  --color-bg: #FFFFFF;
+  --color-text-main: #000000;
+  --color-text-state: #696969;
+  --color-primary: #6b62f2;
+  --color-state: hsl(244,85%,95%);
+  --wrapper-height: 85vh;
+  --image-max-width: 320px;
+  --font-family: "IBM Plex Sans";
+  --font-family-header: "Epilogue";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+hr{
+ border-color: var(--color-primary);
+  margin-bottom:1.8rem;
+}
+
+.bottom-line-divider{
+  margin-top:1.8rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.unselectable {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+  user-select: none;}
+
+/* Import fonts */
+@font-face {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+@font-face {
+  font-family: 'Epilogue', sans-serif;
+}
+
+/* Our remix on glitch button */
+.btn--remix {
+  font-family: IBM Plex Sans;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  height: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-text-main);
+  white-space: nowrap;
+  margin-left: auto;
+}
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background-color: #D0FFF1;
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #fff;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  text-decoration: none;
+  border-style: none;
+}
+.footer a:hover {
+  background-color: var(--color-state);
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  padding: 0 1rem;
+}
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+/* Page structure */
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+}
+.wrapper {
+  min-height: var(--wrapper-height);
+  place-items: center;
+  margin: 3rem 2rem 0;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Typography */
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5rem !important;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2rem 0 .8rem;
+  font-family: var(--font-family-header);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-text-main);
+}
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 4rem;
+  display: inline-flex;
+  color: #6b62f2;
+}
+h2 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+ul > li,
+ol > li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+ul {
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+ul.no-bullet {
+  list-style-type: none;
+}
+
+/* Link styles */
+a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--foreground);
+  transition: background 0.2s linear;
+}
+a:hover {
+  background: var(--color-state);
+  font-style: italic;
+}
+
+.illo-container a{
+  border-bottom: 0px solid var(--color-primary) !important;
+}
+
+.illo-container a:hover{
+  background: hsl(0,0%,100%) !important;
+}
+
+/* Title style adjustments */
+.title-lg {
+  color: var(--color-text-main);
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.title-md {
+  font-size: 52px !important;
+  display: flex;
+  flex-wrap: wrap;
+  
+
+}
+
+/* Layout: Home */
+.home {
+  justify-content: left;
+}
+.illo-container {
+  display: flex;
+  justify-content: flex-start;
+}
+.illustration {
+  max-width: 180px;
+  max-height: var(--image-max-width);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  transform: rotate(-16deg);
+}
+
+/* Post */
+.post {
+  place-items: normal;
+}
+.postTitle {
+  font-size: 2.8rem;
+  color: var(--color-text-main);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.timeNeeded{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-around;
+  gap: 0.4rem;
+  color: var(--color-text-state);
+}
+
+
+.controls {
+  margin: 3rem 0 2rem;
+}

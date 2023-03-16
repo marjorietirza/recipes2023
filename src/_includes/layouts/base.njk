@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {# This is the base template for the site–other templates extend this one #}
+    
+    <meta charset="utf-8" />
+    
+    <link rel="icon" href="https://cdn.glitch.global/2d190b9d-18d1-424e-b90a-6c87e87e3adc/mylogo.svg?v=1675236909022" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="My recipes directory" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    {% seo "" %}
+  </head>
+  <body class="unselectable">
+  <main>
+    
+    
+    {# Page or post content will appear here #}
+  
+    {{ content | safe }}
+
+      <footer class="footer">
+        <div class="links">
+          <a href="/">Back to Home</a>
+        </div>
+      </footer>
+    
+  </main>
+   
+  </body>
+</html>
